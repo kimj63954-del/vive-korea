@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import CategoryCard from './components/CategoryCard';
@@ -31,37 +30,32 @@ const App: React.FC = () => {
 
   if (!isJoined) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white rounded-3xl shadow-2xl p-10 flex flex-col items-center border border-slate-100">
-          <div className="w-16 h-16 bg-[#88C8FF] rounded-2xl flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-xl shadow-[#88C8FF]/20 rotate-3">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
+        <div className="max-w-md w-full bg-white rounded-[2.5rem] shadow-2xl p-10 flex flex-col items-center border border-slate-100 animate-fadeIn">
+          <div className="w-20 h-20 bg-[#88C8FF] rounded-3xl flex items-center justify-center text-white text-4xl font-black mb-8 shadow-2xl shadow-[#88C8FF]/30 rotate-3">
             VK
           </div>
           <h1 className="text-3xl font-extrabold text-slate-900 mb-1">VIBE KOREA</h1>
-          <p className="text-[#88C8FF] font-bold text-sm mb-4 tracking-tight">vivekorea.co.kr</p>
-          <p className="text-slate-500 mb-8 text-center text-sm leading-relaxed">
-            The most essential companion for your journey. Explore the local vibe or join our community.
+          <p className="text-[#88C8FF] font-bold text-sm mb-6 tracking-widest uppercase">Travel Smarter</p>
+          <p className="text-slate-500 mb-10 text-center text-base leading-relaxed">
+            Your essential concierge for the Korean journey. Local transit, trends, and AI-powered help.
           </p>
 
-          <div className="w-full space-y-3">
+          <div className="w-full space-y-4">
             <button 
               onClick={handleEntry}
-              className="w-full flex items-center justify-center gap-3 py-3.5 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all font-semibold text-slate-700 shadow-sm active:scale-[0.98]"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              Sign in with Google
-            </button>
-            <button 
-              onClick={handleEntry}
-              className="w-full py-3.5 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition-all font-bold shadow-lg shadow-slate-200 active:scale-[0.98]"
+              className="w-full flex items-center justify-center gap-3 py-4 bg-slate-900 text-white rounded-2xl hover:bg-slate-800 transition-all font-bold shadow-xl active:scale-95"
             >
               Continue as Guest
             </button>
+            <button 
+              onClick={handleEntry}
+              className="w-full py-4 border-2 border-slate-100 rounded-2xl hover:bg-slate-50 transition-all font-bold text-slate-600 active:scale-95"
+            >
+              Sign in with Google
+            </button>
           </div>
+          <p className="mt-8 text-xs text-slate-400 font-medium">By entering, you agree to our Terms of Service.</p>
         </div>
       </div>
     );
@@ -70,40 +64,34 @@ const App: React.FC = () => {
   const renderContent = () => {
     if (!selectedCategory) {
       return (
-        <div className="animate-fadeIn space-y-12">
-          <div className="relative rounded-[2.5rem] bg-gradient-to-br from-[#88C8FF] via-[#7ab8f0] to-[#a3d4ff] p-12 overflow-hidden shadow-2xl">
-            <div className="relative z-10 max-w-2xl">
-              <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold mb-6 tracking-widest uppercase">
-                VIBE KOREA 2024
-              </span>
-              <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-                Catch the Vibe. <br/> Master the Essential.
+        <div className="animate-fadeIn space-y-10 pb-20">
+          <div className="relative rounded-[2rem] bg-gradient-to-br from-[#88C8FF] to-[#6fb3f0] p-8 md:p-12 overflow-hidden shadow-xl">
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                Authentic <br/>Korea Awaits.
               </h2>
-              <p className="text-white/90 text-sm font-bold mb-6 tracking-wide">Official Home: vivekorea.co.kr</p>
-              <p className="text-blue-50 text-lg md:text-xl mb-10 opacity-90 font-light leading-relaxed">
-                Everything you actually need to navigate Korea—from secret fashion spots to real-time beauty sales.
+              <p className="text-blue-50 text-sm md:text-lg mb-8 opacity-90 max-w-sm">
+                No tourist traps. Only the essentials you need to navigate like a local.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-white text-[#88C8FF] px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-blue-50 transition-colors">Start Planning</button>
-              </div>
+              <button className="bg-white text-[#88C8FF] px-6 py-3 rounded-xl font-bold text-sm shadow-lg">Start Exploring</button>
             </div>
-            <div className="absolute -bottom-10 -right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
           </div>
 
           <div className="space-y-6">
             <div className="flex items-center justify-between px-2">
-              <h3 className="text-2xl font-bold text-slate-900">Your Travel Hub</h3>
-              <div className="flex gap-2 text-[#88C8FF] font-semibold text-sm">
-                <span>{favorites.length} Favorites</span>
-              </div>
+              <h3 className="text-xl font-black text-slate-900">Essentials</h3>
+              <span className="text-xs font-bold text-[#88C8FF] bg-blue-50 px-3 py-1 rounded-full uppercase tracking-tighter">
+                {CATEGORIES.length} Topics
+              </span>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {CATEGORIES.map((cat) => (
                 <CategoryCard
                   key={cat.id}
                   label={cat.label}
                   icon={cat.icon}
-                  color={cat.id === Category.FAVORITES && favorites.length === 0 ? 'bg-slate-200' : cat.color}
+                  color={cat.color}
                   onClick={() => setSelectedCategory(cat.id)}
                 />
               ))}
@@ -115,48 +103,49 @@ const App: React.FC = () => {
 
     if (selectedCategory === Category.FAVORITES) {
       return (
-        <div className="max-w-4xl mx-auto py-6 space-y-8">
-          <div className="flex items-center gap-3">
+        <div className="max-w-4xl mx-auto py-4 space-y-6 pb-20">
+          <div className="flex items-center gap-3 mb-2">
             <span className="text-3xl">⭐</span>
-            <h2 className="text-3xl font-extrabold text-slate-900">Your Favorites</h2>
+            <h2 className="text-2xl font-black text-slate-900">My Favorites</h2>
           </div>
           {favorites.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-[2rem] border border-dashed border-slate-200">
-               <span className="text-5xl block mb-4">🏜️</span>
-               <p className="text-slate-500">You haven't saved any spots or guides yet.</p>
+               <span className="text-5xl block mb-4">📍</span>
+               <p className="text-slate-500 font-medium">Nothing saved yet. Let's find something!</p>
                <button 
                   onClick={() => setSelectedCategory(null)}
                   className="mt-6 text-[#88C8FF] font-bold hover:underline"
                >
-                 Explore Categories
+                 Go to Home
                </button>
             </div>
           ) : (
-            <div className="space-y-6">
+            <div className="grid gap-4">
               {favorites.map((favId) => {
-                // Find what this favId refers to (either a category or a sub-item like Museum)
                 const isMuseum = favId === 'spot_national_museum';
                 const catInfo = CATEGORIES.find(c => c.id === favId);
-                
                 return (
-                  <div key={favId} className="bg-white rounded-[2rem] shadow-md border border-slate-50 p-8 flex justify-between items-center group">
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-800">
-                        {isMuseum ? "National Museum of Korea" : (catInfo?.label || "General Guide")}
-                      </h3>
-                      <p className="text-slate-500 text-sm mt-1">
-                        {isMuseum ? "Tickets & Pricing Info" : "Essential Travel Information"}
-                      </p>
+                  <div key={favId} className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex justify-between items-center animate-fadeIn">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl ${catInfo?.color || 'bg-slate-100'}`}>
+                        {catInfo?.icon || '🏛️'}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-800 text-base">
+                          {isMuseum ? "National Museum of Korea" : (catInfo?.label || "Guide")}
+                        </h3>
+                        <p className="text-slate-400 text-xs font-medium uppercase tracking-tighter">Quick Access</p>
+                      </div>
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-2">
                       <button 
                         onClick={() => setSelectedCategory(isMuseum ? Category.ATTRACTIONS : (favId as Category))}
-                        className="bg-slate-50 hover:bg-[#88C8FF] hover:text-white text-[#88C8FF] px-6 py-3 rounded-xl font-bold text-sm transition-all"
+                        className="bg-blue-50 text-[#88C8FF] p-2 rounded-lg font-bold text-xs"
                       >
-                        Open
+                        VIEW
                       </button>
-                      <button onClick={() => toggleFavorite(favId)} className="text-red-400 p-3 hover:bg-red-50 rounded-xl transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <button onClick={() => toggleFavorite(favId)} className="text-red-400 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                         </svg>
                       </button>
@@ -172,15 +161,15 @@ const App: React.FC = () => {
 
     if (selectedCategory === Category.AI_CONCIERGE) {
       return (
-        <div className="max-w-4xl mx-auto py-4">
-          <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-slate-100 h-[700px] flex flex-col">
-            <div className="p-6 bg-[#88C8FF] text-white flex items-center justify-between">
+        <div className="max-w-4xl mx-auto py-2 pb-24 h-[calc(100vh-140px)]">
+          <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-slate-100 h-full flex flex-col">
+            <div className="p-5 bg-slate-900 text-white flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">🤖</div>
-                <h3 className="font-bold">VK Concierge</h3>
+                <div className="w-8 h-8 bg-[#88C8FF] rounded-lg flex items-center justify-center text-xs">AI</div>
+                <h3 className="font-bold text-sm tracking-tight">VIBE CONCIERGE</h3>
               </div>
             </div>
-            <div className="flex-1 p-8 overflow-hidden">
+            <div className="flex-1 p-6 overflow-hidden">
               <AiConcierge />
             </div>
           </div>
@@ -189,8 +178,8 @@ const App: React.FC = () => {
     }
 
     return (
-      <div className="max-w-4xl mx-auto py-6">
-        <div className="bg-white rounded-[2.5rem] shadow-lg border border-slate-50 p-10">
+      <div className="max-w-4xl mx-auto py-2 pb-20">
+        <div className="bg-white rounded-[2rem] shadow-lg border border-slate-50 p-8">
           <GuideContent 
             data={GUIDE_DATA[selectedCategory]} 
             isItemFavorite={(id) => favorites.includes(id)}
@@ -208,6 +197,37 @@ const App: React.FC = () => {
       onBack={selectedCategory ? () => setSelectedCategory(null) : undefined}
     >
       {renderContent()}
+      
+      {/* Mobile Bottom Nav */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-lg border-t border-slate-100 px-8 py-4 flex justify-between items-center z-50 md:hidden">
+        <button 
+          onClick={() => setSelectedCategory(null)}
+          className={`flex flex-col items-center gap-1 ${!selectedCategory ? 'text-[#88C8FF]' : 'text-slate-400'}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span className="text-[10px] font-bold">Home</span>
+        </button>
+        <button 
+          onClick={() => setSelectedCategory(Category.AI_CONCIERGE)}
+          className={`flex flex-col items-center gap-1 ${selectedCategory === Category.AI_CONCIERGE ? 'text-[#88C8FF]' : 'text-slate-400'}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
+          <span className="text-[10px] font-bold">AI Chat</span>
+        </button>
+        <button 
+          onClick={() => setSelectedCategory(Category.FAVORITES)}
+          className={`flex flex-col items-center gap-1 ${selectedCategory === Category.FAVORITES ? 'text-[#88C8FF]' : 'text-slate-400'}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.175 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.382-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+          </svg>
+          <span className="text-[10px] font-bold">Favorites</span>
+        </button>
+      </div>
     </Layout>
   );
 };

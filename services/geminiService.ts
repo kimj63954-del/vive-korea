@@ -1,14 +1,25 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+export const getTravelAdvice = async (userPrompt: string, history: any[]) => {
+  const apiKey = process.env.API_KEY;
+  
+  if (!apiKey) {
+    console.error("API_KEY is missing.");
+    return "I'm sorry, my AI brain is currently disconnected (Missing API Key).";
+  }
 
-export const getTravelAdvice = async (userPrompt: string, history: {role: string, parts: {text: string}[]}[]) => {
   try {
+    // Correct initialization as per guidelines: new GoogleGenAI({ apiKey: ... })
+    const ai = new GoogleGenAI({ apiKey });
+    
+    // Using gemini-3-flash-preview as recommended for basic/general tasks
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: 'gemini-3-flash-preview',
       contents: [
-        ...history,
+        ...history.map(h => ({
+          role: h.role === 'model' ? 'model' : 'user',
+          parts: [{ text: h.parts[0].text }]
+        })),
         { role: 'user', parts: [{ text: userPrompt }] }
       ],
       config: {
@@ -16,9 +27,10 @@ export const getTravelAdvice = async (userPrompt: string, history: {role: string
         temperature: 0.7,
       },
     });
-    return response.text;
+
+    return response.text || "I couldn't generate a response. Let's try another question!";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "Oops! My vibe-check failed. Let me try reconnecting to my travel database. Try again in a second!";
+    return "Oops! My vibe-check failed. Please check your internet or API key settings.";
   }
 };
