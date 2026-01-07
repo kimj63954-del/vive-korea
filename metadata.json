@@ -1,0 +1,21 @@
+{
+  "name": "VIBE KOREA",
+  "short_name": "VK",
+  "description": "Essential travel hub for foreigners visiting Korea. AI concierge, transport guides, and local trends.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#88C8FF",
+  "icons": [
+    {
+      "src": "https://vivekorea.co.kr/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
